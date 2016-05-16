@@ -1,0 +1,29 @@
+{
+  "name": "devday-pi",
+  "version": "0.1.0",
+  "description": "devday demo pi code",
+  "main": "index.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/garethmidwood/devday-pi.git"
+  },
+  "keywords": [
+    "sonumi",
+    "device"
+  ],
+  "author": "“Gareth <“gmidwood@gmail.com”> (http://www.garethmidwood.co.uk/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/garethmidwood/devday-pi/issues"
+  },
+  "homepage": "https://github.com/garethmidwood/devday-pi",
+  "dependencies": {
+    "config": "^1.19.0",
+    "ddp": "^0.11.0",
+    "ddp-login": "^1.0.9",
+    "play": "^0.5.0"
+  }
+}

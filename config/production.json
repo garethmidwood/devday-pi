@@ -1,0 +1,6 @@
+{
+  "server": {
+    "host": "http://sonumi.com",
+    "port": 3000
+  }
+}
