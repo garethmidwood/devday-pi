@@ -1,3 +1,3 @@
-var play = require('play');
+var play = require('play-sound')({"player": "omxplayer"});
 
-play.sound('./samples/connection_lost.mp3');
+play.play('samples/chopper.mp3');
