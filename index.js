@@ -1,6 +1,6 @@
 var config = require('config');
 var ddp = require('ddp');
-var player = require('play-sound')({"player": "omxplayer"});
+var player = require('play-sound')({"players": ["omxplayer", "afplay"]});
 
 console.log(config.server.host + ":" + config.server.port);
 
