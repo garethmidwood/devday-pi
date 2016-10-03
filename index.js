@@ -16,15 +16,13 @@ ddpclient.connect(function(error) {
 
     player.play('./samples/connected.mp3');
 
-    ddpclient.subscribe('options');
+    ddpclient.subscribe('config');
 
-    var observer = ddpclient.observe('options');
+    var observer = ddpclient.observe('config');
 
     observer.changed = function(_id, oldFields, clearedFields, newFields) {
-        if (newFields.winner === true) {
-            var chosenTrack = ddpclient.collections.options[_id];
-            console.log('Playing "' + chosenTrack.label + '"');
-            player.play('./samples/' + chosenTrack.file);
+        if (newFields._id === "gameWinner") {
+            player.play('./samples/cookie.mp3');
         }
     };
 });
