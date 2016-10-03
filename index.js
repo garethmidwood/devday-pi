@@ -17,14 +17,20 @@ ddpclient.connect(function(error) {
     console.log('connected');
     player.play('./samples/connected.mp3');
 
-    ddpclient.subscribe('pub_config');
+    ddpclient.subscribe(
+        'pub_config',
+        [],
+        {
+            console.log('config complete');
+            console.log(ddpclient.collections.config);
+        }
+    ); 
 
     var observer = ddpclient.observe('pub_config');
 
-    observer.changed = function(_id, oldFields, clearedFields, newFields) {
+    observer.added = function(_id) {
         console.log('something changed');
-        console.log(newFields);
-        if (newFields._id === "gameWinner") {
+        if (_id === "gameWinner") {
             player.play('./samples/cookie.mp3');
         }
     };
