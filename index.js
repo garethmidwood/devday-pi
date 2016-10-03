@@ -29,10 +29,18 @@ ddpclient.connect(function(error) {
     var observer = ddpclient.observe('pub_config');
 
     observer.added = function(_id) {
-        console.log('something changed');
+        console.log('added ' + _id);
         if (_id === "gameWinner") {
             player.play('./samples/cookie.mp3');
         }
     };
+
+    observer.changed = function(_id, oldFields, clearedFields, newFields) {
+        console.log('changed ' + _id);
+    };
+
+    observer.removed = function(_id, oldValue) {
+        console.log('removed ' + _id);
+    }
 });
 
