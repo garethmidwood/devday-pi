@@ -20,7 +20,7 @@ ddpclient.connect(function(error) {
     ddpclient.subscribe(
         'pub_config',
         [],
-        {
+        function() {
             console.log('config complete');
             console.log(ddpclient.collections.config);
         }
