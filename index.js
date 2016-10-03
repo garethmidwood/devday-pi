@@ -14,6 +14,7 @@ ddpclient.connect(function(error) {
         return;
     }
 
+    console.log('connected');
     player.play('./samples/connected.mp3');
 
     ddpclient.subscribe('config');
@@ -21,6 +22,7 @@ ddpclient.connect(function(error) {
     var observer = ddpclient.observe('config');
 
     observer.changed = function(_id, oldFields, clearedFields, newFields) {
+        console.log(newFields);
         if (newFields._id === "gameWinner") {
             player.play('./samples/cookie.mp3');
         }
