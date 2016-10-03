@@ -26,7 +26,7 @@ ddpclient.connect(function(error) {
         }
     ); 
 
-    var observer = ddpclient.observe('pub_config');
+    var observer = ddpclient.observe('config');
 
     observer.added = function(_id) {
         console.log('added ' + _id);
