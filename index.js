@@ -17,11 +17,12 @@ ddpclient.connect(function(error) {
     console.log('connected');
     player.play('./samples/connected.mp3');
 
-    ddpclient.subscribe('config');
+    ddpclient.subscribe('pub_config');
 
-    var observer = ddpclient.observe('config');
+    var observer = ddpclient.observe('pub_config');
 
     observer.changed = function(_id, oldFields, clearedFields, newFields) {
+        console.log('something changed');
         console.log(newFields);
         if (newFields._id === "gameWinner") {
             player.play('./samples/cookie.mp3');
